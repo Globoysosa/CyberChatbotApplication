@@ -57,6 +57,10 @@
     <Compile Include="Models\QuizQuestion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ActivityLogService.cs" />
+    <Compile Include="Services\NLPService.cs" />
+    <Compile Include="Services\QuickService.cs" />
+    <Compile Include="Services\TaskService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
