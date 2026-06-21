@@ -61,12 +61,30 @@
     <Compile Include="Services\NLPService.cs" />
     <Compile Include="Services\QuickService.cs" />
     <Compile Include="Services\TaskService.cs" />
+    <Compile Include="Windows\ActivityLogWindow.xaml.cs">
+      <DependentUpon>ActivityLogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\QuizWindow.xaml.cs">
+      <DependentUpon>QuizWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TaskWindow.xaml.cs">
+      <DependentUpon>TaskWindow.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ActivityLogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\QuizWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TaskWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

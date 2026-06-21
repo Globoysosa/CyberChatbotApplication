@@ -57,38 +57,43 @@
             </StackPanel>
         </Border>
 
-        <!-- Title Bar -->
-        <Border Grid.Row="1" Background="#161B22" Padding="10,5">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="🛡️ CYBERSECURITY AWARENESS ASSISTANT" 
-                           Foreground="#00B4D8" 
-                           FontWeight="Bold"
-                           VerticalAlignment="Center"/>
-                <Button x:Name="VoiceButton" 
-                        Content="🔊 Play Greeting" 
-                        Width="110" 
-                        Margin="20,0,0,0"
-                        Background="#1F6F8B" 
-                        Foreground="White"
-                        BorderThickness="0"
-                        Cursor="Hand"
-                        Click="VoiceButton_Click"/>
-                <Button x:Name="ConsoleButton" 
-                        Content="💻 Switch to Console" 
-                        Width="130" 
-                        Margin="10,0,0,0"
-                        Background="#30363D" 
-                        Foreground="White"
-                        BorderThickness="0"
-                        Cursor="Hand"
-                        Click="ConsoleButton_Click"/>
-            </StackPanel>
+        <!-- Toolbar with all Part 3 feature buttons -->
+        <Border Grid.Row="1" Background="#161B22" Padding="10,6" BorderBrush="#30363D" BorderThickness="0,0,0,1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Left: branding -->
+                <TextBlock Grid.Column="0" Text="🛡️ CYBERSECURITY AWARENESS ASSISTANT" 
+                           Foreground="#00B4D8" FontWeight="Bold" VerticalAlignment="Center"/>
+
+                <!-- Right: action buttons -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button x:Name="VoiceButton" Content="🔊 Greeting" Width="90" Margin="0,0,6,0"
+                            Background="#1F6F8B" Foreground="White" BorderThickness="0" Cursor="Hand"
+                            Padding="6,4" FontSize="11" Click="VoiceButton_Click"/>
+                    <Button x:Name="TasksButton" Content="📋 Tasks" Width="80" Margin="0,0,6,0"
+                            Background="#1F8B4C" Foreground="White" BorderThickness="0" Cursor="Hand"
+                            Padding="6,4" FontSize="11" Click="TasksButton_Click"/>
+                    <Button x:Name="QuizButton" Content="🎮 Quiz" Width="75" Margin="0,0,6,0"
+                            Background="#7B2D8B" Foreground="White" BorderThickness="0" Cursor="Hand"
+                            Padding="6,4" FontSize="11" Click="QuizButton_Click"/>
+                    <Button x:Name="LogButton" Content="📊 Activity Log" Width="110" Margin="0,0,6,0"
+                            Background="#8B4500" Foreground="White" BorderThickness="0" Cursor="Hand"
+                            Padding="6,4" FontSize="11" Click="LogButton_Click"/>
+                    <Button x:Name="ConsoleButton" Content="💻 Console" Width="85"
+                            Background="#30363D" Foreground="White" BorderThickness="0" Cursor="Hand"
+                            Padding="6,4" FontSize="11" Click="ConsoleButton_Click"/>
+                </StackPanel>
+            </Grid>
         </Border>
 
         <!-- Chat Display -->
         <ScrollViewer x:Name="ChatScrollViewer" Grid.Row="2" 
-                      VerticalScrollBarVisibility="Auto"
-                      Background="#0D1117">
+                      VerticalScrollBarVisibility="Auto" Background="#0D1117">
             <StackPanel x:Name="ChatPanel" Margin="10" Orientation="Vertical"/>
         </ScrollViewer>
 
@@ -99,30 +104,19 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-
-                <TextBox x:Name="UserInput" 
-                         Grid.Column="0"
-                         Background="#0D1117"
-                         Foreground="#E6EDF3"
-                         BorderBrush="#30363D"
-                         BorderThickness="1"
-                         FontSize="13"
-                         Padding="10"
+                <TextBox x:Name="UserInput" Grid.Column="0"
+                         Background="#0D1117" Foreground="#E6EDF3"
+                         BorderBrush="#30363D" BorderThickness="1"
+                         FontSize="13" Padding="10"
                          KeyDown="UserInput_KeyDown"
-                         TextWrapping="Wrap"/>
-
-                <Button x:Name="SendButton" 
-                        Grid.Column="1"
-                        Content="SEND" 
-                        Width="70" 
-                        Height="35"
+                         TextWrapping="Wrap"
+                         ToolTip="Type a message or try: 'add task', 'start quiz', 'show activity log', 'help'"/>
+                <Button x:Name="SendButton" Grid.Column="1"
+                        Content="SEND" Width="75" Height="38"
                         Margin="10,0,0,0"
-                        Background="#1F6F8B" 
-                        Foreground="White"
-                        FontWeight="Bold"
-                        BorderThickness="0"
-                        Cursor="Hand"
-                        Click="SendButton_Click"/>
+                        Background="#1F6F8B" Foreground="White"
+                        FontWeight="Bold" BorderThickness="0"
+                        Cursor="Hand" Click="SendButton_Click"/>
             </Grid>
         </Border>
     </Grid>
