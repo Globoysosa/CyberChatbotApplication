@@ -27,7 +27,7 @@ namespace CyberChatbotApplication.Services
     {
         // Connection string — update Server/Uid/Pwd as needed for the local MySQL instance
         private const string ConnectionString =
-            "Server=localhost;Port=3306;Database=cyba_db;Uid=root;Pwd=;SslMode=None;";
+            "Server=localhost;Port=3306;Database=cyba_db;Uid=root;Pwd=Thokozani06!;SslMode=None;";
 
         // ─── Initialisation ────────────────────────────────────────────────────
 
