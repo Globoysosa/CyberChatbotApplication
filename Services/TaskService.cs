@@ -38,7 +38,7 @@ namespace CyberChatbotApplication.Services
         public static void InitialiseDatabase()
         {
             // Connect without specifying database first so we can create it
-            string rootConn = "Server=localhost;Port=3306;Uid=root;Pwd=;SslMode=None;";
+            string rootConn = "Server=localhost;Port=3306;Uid=root;Pwd=Thokozani06!;SslMode=None;";
             try
             {
                 using (var conn = new MySqlConnection(rootConn))
